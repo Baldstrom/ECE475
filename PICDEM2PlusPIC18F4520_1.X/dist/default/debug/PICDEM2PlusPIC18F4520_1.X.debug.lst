@@ -1,0 +1,445 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Wed Apr 03 12:12:42 2019
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	18F452
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    11  0000                     
+    12                           ; Version 2.05
+    13                           ; Generated 20/12/2018 GMT
+    14                           ; 
+    15                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    16                           ; All rights reserved.
+    17                           ; 
+    18                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    19                           ; 
+    20                           ; Redistribution and use in source and binary forms, with or without modification, are
+    21                           ; permitted provided that the following conditions are met:
+    22                           ; 
+    23                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    24                           ;        conditions and the following disclaimer.
+    25                           ; 
+    26                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    27                           ;        of conditions and the following disclaimer in the documentation and/or other
+    28                           ;        materials provided with the distribution.
+    29                           ; 
+    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    31                           ;        software without specific prior written permission.
+    32                           ; 
+    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    41                           ; 
+    42                           ; 
+    43                           ; Code-generator required, PIC18F452 Definitions
+    44                           ; 
+    45                           ; SFR Addresses
+    46  0000                     
+    47                           ; #config settings
+    48  0000                     
+    49                           	psect	cinit
+    50  003F72                     __pcinit:
+    51                           	opt callstack 0
+    52  003F72                     start_initialization:
+    53                           	opt callstack 0
+    54  003F72                     __initialization:
+    55                           	opt callstack 0
+    56  003F72                     end_of_initialization:
+    57                           	opt callstack 0
+    58  003F72                     __end_of__initialization:
+    59                           	opt callstack 0
+    60  003F72  0100               	movlb	0
+    61  003F74  EFD4  F01F         	goto	_main	;jump to C main() function
+    62                           
+    63                           	psect	cstackCOMRAM
+    64  000001                     __pcstackCOMRAM:
+    65                           	opt callstack 0
+    66  000001                     delay@counter:
+    67                           	opt callstack 0
+    68                           
+    69                           ; 2 bytes @ 0x0
+    70  000001                     	ds	2
+    71  000003                     main@count:
+    72                           	opt callstack 0
+    73                           
+    74                           ; 2 bytes @ 0x2
+    75  000003                     	ds	2
+    76                           
+    77 ;;
+    78 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    79 ;;
+    80 ;; *************** function _main *****************
+    81 ;; Defined at:
+    82 ;;		line 21 in file "main.c"
+    83 ;; Parameters:    Size  Location     Type
+    84 ;;		None
+    85 ;; Auto vars:     Size  Location     Type
+    86 ;;  count           2    2[COMRAM] int 
+    87 ;; Return value:  Size  Location     Type
+    88 ;;                  1    wreg      void 
+    89 ;; Registers used:
+    90 ;;		wreg, status,2, status,0, cstack
+    91 ;; Tracked objects:
+    92 ;;		On entry : 0/0
+    93 ;;		On exit  : 0/0
+    94 ;;		Unchanged: 0/0
+    95 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    96 ;;      Params:         0       0       0       0       0       0       0
+    97 ;;      Locals:         2       0       0       0       0       0       0
+    98 ;;      Temps:          0       0       0       0       0       0       0
+    99 ;;      Totals:         2       0       0       0       0       0       0
+   100 ;;Total ram usage:        2 bytes
+   101 ;; Hardware stack levels required when called:    1
+   102 ;; This function calls:
+   103 ;;		_delay
+   104 ;; This function is called by:
+   105 ;;		Startup code after reset
+   106 ;; This function uses a non-reentrant model
+   107 ;;
+   108                           
+   109                           	psect	text0
+   110  003FA8                     __ptext0:
+   111                           	opt callstack 0
+   112  003FA8                     _main:
+   113                           	opt callstack 0
+   114  003FA8  FFFF               	dw	65535	; assembler added errata NOP
+   115                           
+   116                           ;main.c: 24:     int count = 0;
+   117                           
+   118                           ;incstack = 0
+   119  003FAA  0E00               	movlw	0
+   120  003FAC  6E04               	movwf	main@count+1,c
+   121  003FAE  0E00               	movlw	0
+   122  003FB0  6E03               	movwf	main@count,c
+   123                           
+   124                           ;main.c: 28:     *(volatile unsigned long *) 0xF81 = 0x00;
+   125  003FB2  0E00               	movlw	0
+   126  003FB4  6E81               	movwf	3969,c	;volatile
+   127  003FB6  0E00               	movlw	0
+   128  003FB8  6E82               	movwf	3970,c	;volatile
+   129  003FBA  0E00               	movlw	0
+   130  003FBC  6E83               	movwf	3971,c	;volatile
+   131  003FBE  0E00               	movlw	0
+   132  003FC0  6E84               	movwf	3972,c	;volatile
+   133                           
+   134                           ;main.c: 29:     *(volatile unsigned long *) 0xF8A = 0x00;
+   135  003FC2  0E00               	movlw	0
+   136  003FC4  6E8A               	movwf	3978,c	;volatile
+   137  003FC6  0E00               	movlw	0
+   138  003FC8  6E8B               	movwf	3979,c	;volatile
+   139  003FCA  0E00               	movlw	0
+   140  003FCC  6E8C               	movwf	3980,c	;volatile
+   141  003FCE  0E00               	movlw	0
+   142  003FD0  6E8D               	movwf	3981,c	;volatile
+   143                           
+   144                           ;main.c: 31:     *(volatile unsigned long *) 0xF93 = 0x00;
+   145  003FD2  0E00               	movlw	0
+   146  003FD4  6E93               	movwf	3987,c	;volatile
+   147  003FD6  0E00               	movlw	0
+   148  003FD8  6E94               	movwf	3988,c	;volatile
+   149  003FDA  0E00               	movlw	0
+   150  003FDC  6E95               	movwf	3989,c	;volatile
+   151  003FDE  0E00               	movlw	0
+   152  003FE0  6E96               	movwf	3990,c	;volatile
+   153  003FE2                     l701:
+   154  003FE2  FFFF               	dw	65535	; assembler added errata NOP
+   155                           
+   156                           ;main.c: 36:         *(volatile unsigned long *) 0xF81 = count;
+   157  003FE4  C003  FF81         	movff	main@count,3969	;volatile
+   158  003FE8  C004  FF82         	movff	main@count+1,3970	;volatile
+   159  003FEC  0E00               	movlw	0
+   160  003FEE  BE82               	btfsc	3970,7,c	;volatile
+   161  003FF0  0EFF               	movlw	-1
+   162  003FF2  6E83               	movwf	3971,c	;volatile
+   163  003FF4  6E84               	movwf	3972,c	;volatile
+   164                           
+   165                           ;main.c: 38:         delay();
+   166  003FF6  ECBC  F01F         	call	_delay	;wreg free
+   167                           
+   168                           ;main.c: 40:         count++;
+   169  003FFA  4A03               	infsnz	main@count,f,c
+   170  003FFC  2A04               	incf	main@count+1,f,c
+   171  003FFE  D7F1               	goto	l701
+   172  004000                     __end_of_main:
+   173                           	opt callstack 0
+   174                           
+   175 ;; *************** function _delay *****************
+   176 ;; Defined at:
+   177 ;;		line 14 in file "main.c"
+   178 ;; Parameters:    Size  Location     Type
+   179 ;;		None
+   180 ;; Auto vars:     Size  Location     Type
+   181 ;;  counter         2    0[COMRAM] int 
+   182 ;; Return value:  Size  Location     Type
+   183 ;;                  1    wreg      void 
+   184 ;; Registers used:
+   185 ;;		wreg, status,2, status,0
+   186 ;; Tracked objects:
+   187 ;;		On entry : 0/0
+   188 ;;		On exit  : 0/0
+   189 ;;		Unchanged: 0/0
+   190 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   191 ;;      Params:         0       0       0       0       0       0       0
+   192 ;;      Locals:         2       0       0       0       0       0       0
+   193 ;;      Temps:          0       0       0       0       0       0       0
+   194 ;;      Totals:         2       0       0       0       0       0       0
+   195 ;;Total ram usage:        2 bytes
+   196 ;; Hardware stack levels used:    1
+   197 ;; This function calls:
+   198 ;;		Nothing
+   199 ;; This function is called by:
+   200 ;;		_main
+   201 ;; This function uses a non-reentrant model
+   202 ;;
+   203                           
+   204                           	psect	text1
+   205  003F78                     __ptext1:
+   206                           	opt callstack 0
+   207  003F78                     _delay:
+   208                           	opt callstack 0
+   209  003F78  FFFF               	dw	65535	; assembler added errata NOP
+   210                           
+   211                           ;main.c: 15:     int counter = 0;
+   212                           
+   213                           ;incstack = 0
+   214  003F7A  0E00               	movlw	0
+   215  003F7C  6E02               	movwf	delay@counter+1,c
+   216  003F7E  0E00               	movlw	0
+   217  003F80  6E01               	movwf	delay@counter,c
+   218                           
+   219                           ;main.c: 16:     for (counter = 0; counter<1000; counter++) {
+   220  003F82  0E00               	movlw	0
+   221  003F84  6E02               	movwf	delay@counter+1,c
+   222  003F86  0E00               	movlw	0
+   223  003F88  6E01               	movwf	delay@counter,c
+   224  003F8A                     l695:
+   225  003F8A  FFFF               	dw	65535	; assembler added errata NOP
+   226                           
+   227                           ;main.c: 18:     }
+   228  003F8C  4A01               	infsnz	delay@counter,f,c
+   229  003F8E  2A02               	incf	delay@counter+1,f,c
+   230  003F90  BE02               	btfsc	delay@counter+1,7,c
+   231  003F92  D7FB               	goto	l695
+   232  003F94  0EE8               	movlw	232
+   233  003F96  5C01               	subwf	delay@counter,w,c
+   234  003F98  0E03               	movlw	3
+   235  003F9A  5802               	subwfb	delay@counter+1,w,c
+   236  003F9C  B0D8               	btfsc	status,0,c
+   237  003F9E  0012               	return		;funcret
+   238  003FA0  FFFF               	dw	65535	; assembler added errata NOP
+   239  003FA2  D7F3               	goto	l695
+   240  003FA4  FFFF               	dw	65535	; errata NOP
+   241  003FA6                     __end_of_delay:
+   242                           	opt callstack 0
+   243  003FA6  FFFF               	dw	65535	; assembler added errata NOP
+   244                           
+   245                           	psect	rparam
+   246  0000                     tosu	equ	0xFFF
+   247                           tosh	equ	0xFFE
+   248                           tosl	equ	0xFFD
+   249                           stkptr	equ	0xFFC
+   250                           pclatu	equ	0xFFB
+   251                           pclath	equ	0xFFA
+   252                           pcl	equ	0xFF9
+   253                           tblptru	equ	0xFF8
+   254                           tblptrh	equ	0xFF7
+   255                           tblptrl	equ	0xFF6
+   256                           tablat	equ	0xFF5
+   257                           prodh	equ	0xFF4
+   258                           prodl	equ	0xFF3
+   259                           indf0	equ	0xFEF
+   260                           postinc0	equ	0xFEE
+   261                           postdec0	equ	0xFED
+   262                           preinc0	equ	0xFEC
+   263                           plusw0	equ	0xFEB
+   264                           fsr0h	equ	0xFEA
+   265                           fsr0l	equ	0xFE9
+   266                           wreg	equ	0xFE8
+   267                           indf1	equ	0xFE7
+   268                           postinc1	equ	0xFE6
+   269                           postdec1	equ	0xFE5
+   270                           preinc1	equ	0xFE4
+   271                           plusw1	equ	0xFE3
+   272                           fsr1h	equ	0xFE2
+   273                           fsr1l	equ	0xFE1
+   274                           bsr	equ	0xFE0
+   275                           indf2	equ	0xFDF
+   276                           postinc2	equ	0xFDE
+   277                           postdec2	equ	0xFDD
+   278                           preinc2	equ	0xFDC
+   279                           plusw2	equ	0xFDB
+   280                           fsr2h	equ	0xFDA
+   281                           fsr2l	equ	0xFD9
+   282                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          127      4       4
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           244      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_delay
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0      45
+                                              2 COMRAM     2     2      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (1) _delay                                                2     2      0      30
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _delay
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           7F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              7F      4       4       1        3.1%
+STACK                0      0       0       2        0.0%
+BITBANK0            80      0       0       3        0.0%
+BANK0               80      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK3           100      0       0       9        0.0%
+BANK3              100      0       0      10        0.0%
+BITBANK4           100      0       0      11        0.0%
+BANK4              100      0       0      12        0.0%
+BANK5               F4      0       0      13        0.0%
+ABS                  0      0       0      14        0.0%
+BITBANK5            F4      0       0      15        0.0%
+BIGRAM             5F3      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_5             0      0       0     200        0.0%
+SFR_5                0      0       0     200        0.0%
+BITSFR_4             0      0       0     200        0.0%
+SFR_4                0      0       0     200        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Wed Apr 03 12:12:42 2019
+
+                                                       __CFG_LVP$ON 000000  
+                                                               l701 3FE2  
+                                                               l695 3F8A  
+                                                     __CFG_DEBUG$ON 000000  
+                                                      __CFG_STVR$ON 000000  
+                                                              _main 3FA8  
+                                                              start 0002  
+                                                      ___param_bank 000000  
+                                                             ?_main 0001  
+                                                             _delay 3F78  
+                                                             status 000FD8  
+                                                   __initialization 3F72  
+                                                      __end_of_main 4000  
+                                                            ??_main 0003  
+                                                     __activetblptr 000000  
+                                                            ?_delay 0001  
+                                                        __accesstop 0080  
+                                           __end_of__initialization 3F72  
+                                                     ___rparam_used 000001  
+                                                    __pcstackCOMRAM 0001  
+                                                     __end_of_delay 3FA6  
+                                                           ??_delay 0001  
+                                                           __Hparam 0000  
+                                                           __Lparam 0000  
+                                                           __pcinit 3F72  
+                                                           __ramtop 0600  
+                                                           __ptext0 3FA8  
+                                                           __ptext1 3F78  
+                                              end_of_initialization 3F72  
+                                                         __CFG_WDT$ 000000  
+                                               start_initialization 3F72  
+                                                    __size_of_delay 002E  
+                                                      delay@counter 0001  
+                                                         main@count 0003  
+                                                          __Hrparam 0000  
+                                                          __Lrparam 0000  
+                                                     __size_of_main 0058  

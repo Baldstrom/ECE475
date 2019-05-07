@@ -1,0 +1,151 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F25K22 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"5 C:\Users\EE475.PALAVEN.000\Documents\PICSlave\i2c_slave.c
+[v _I2C_Slave_Interrupt_Enable I2C_Slave_Interrupt_Enable `(v  1 e 1 0 ]
+"19
+[v _I2C_Slave_Initialize I2C_Slave_Initialize `(v  1 e 1 0 ]
+"54
+[v _Buffer_Status Buffer_Status `(uc  1 e 1 0 ]
+"98
+[v _I2C_Slave_Clear_Interrupt I2C_Slave_Clear_Interrupt `(v  1 e 1 0 ]
+[v i2_I2C_Slave_Clear_Interrupt I2C_Slave_Clear_Interrupt `(v  1 e 1 0 ]
+"102
+[v _I2C_Slave_Interrupt I2C_Slave_Interrupt `(v  1 e 1 0 ]
+"15 C:\Users\EE475.PALAVEN.000\Documents\PICSlave\main.c
+[v _main main `(v  1 e 1 0 ]
+"45
+[v _high_interrupt high_interrupt `IIH(v  1 e 1 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f25k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"147
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+"236
+[v _PMD1 PMD1 `VEuc  1 e 1 @3902 ]
+"6174
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"6838
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"7244
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"7468
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"7580
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"8024
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"8617
+[v _PIE1 PIE1 `VEuc  1 e 1 @3997 ]
+[s S102 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"8639
+[s S110 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S115 . 1 `S102 1 . 1 0 `S110 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES115  1 e 1 @3997 ]
+"8694
+[v _PIR1 PIR1 `VEuc  1 e 1 @3998 ]
+[s S72 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"8716
+[s S80 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S85 . 1 `S72 1 . 1 0 `S80 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES85  1 e 1 @3998 ]
+"8771
+[v _IPR1 IPR1 `VEuc  1 e 1 @3999 ]
+"12952
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @4037 ]
+"13306
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
+"13544
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @4039 ]
+"14174
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
+"14428
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @4041 ]
+"14482
+[v _SSP1MSK SSP1MSK `VEuc  1 e 1 @4042 ]
+"14620
+[v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @4043 ]
+"14997
+[v _RCON RCON `VEuc  1 e 1 @4048 ]
+"16095
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+"15 C:\Users\EE475.PALAVEN.000\Documents\PICSlave\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"41
+} 0
+"19 C:\Users\EE475.PALAVEN.000\Documents\PICSlave\i2c_slave.c
+[v _I2C_Slave_Initialize I2C_Slave_Initialize `(v  1 e 1 0 ]
+{
+"48
+} 0
+"5
+[v _I2C_Slave_Interrupt_Enable I2C_Slave_Interrupt_Enable `(v  1 e 1 0 ]
+{
+"17
+} 0
+"98
+[v _I2C_Slave_Clear_Interrupt I2C_Slave_Clear_Interrupt `(v  1 e 1 0 ]
+{
+} 0
+"45 C:\Users\EE475.PALAVEN.000\Documents\PICSlave\main.c
+[v _high_interrupt high_interrupt `IIH(v  1 e 1 0 ]
+{
+"49
+} 0
+"102 C:\Users\EE475.PALAVEN.000\Documents\PICSlave\i2c_slave.c
+[v _I2C_Slave_Interrupt I2C_Slave_Interrupt `(v  1 e 1 0 ]
+{
+"110
+} 0
+"98
+[v i2_I2C_Slave_Clear_Interrupt I2C_Slave_Clear_Interrupt `(v  1 e 1 0 ]
+{
+} 0
