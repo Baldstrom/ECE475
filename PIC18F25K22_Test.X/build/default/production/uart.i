@@ -28,6 +28,8 @@
 # 1 "./uart.h" 1
 # 18 "./uart.h"
     void UART_Initialize();
+    void UART_Write(unsigned char data);
+    unsigned char UART_Read();
 # 2 "uart.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
@@ -9129,6 +9131,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 3 "uart.c" 2
 
 
+
 void UART_Initialize()
 {
 
@@ -9141,5 +9144,37 @@ void UART_Initialize()
     LATC &= ~0xC0;
 
 
+ TRISCbits.TRISC6 = 0;
+ TRISCbits.TRISC7 = 1;
+ TXSTA1bits.SYNC = 0;
+ TXSTA1bits.TX9 = 0;
+ TXSTA1bits.TXEN = 1;
+ RCSTA1bits.RX9 = 0;
+ RCSTA1bits.CREN = 1;
 
+ BAUDCON1bits.BRG16 = 0;
+ TXSTA1bits.BRGH = 0;
+    RCSTA1bits.SPEN = 1;
+
+ OSCCON |= 0x60;
+
+ SPBRG1 = 12;
+
+
+}
+
+void UART_Write(unsigned char data) {
+
+ while (TXSTA1bits.TRMT == 0) {};
+ TXREG1 = data;
+}
+unsigned char UART_Read() {
+ while (PIR1bits.RC1IF == 0) {
+  if (RCSTA1bits.OERR == 1) {
+  RCSTA1bits.OERR = 0;
+  RCSTA1bits.CREN = 0;
+  RCSTA1bits.CREN = 1;
+  }
+ }
+ return RCREG1;
 }

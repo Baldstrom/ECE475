@@ -16,6 +16,8 @@ extern "C" {
 
     
     void UART_Initialize();
+    void UART_Write(unsigned char data);
+    unsigned char UART_Read();
 
 
 #ifdef	__cplusplus

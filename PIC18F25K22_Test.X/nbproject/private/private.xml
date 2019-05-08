@@ -8,10 +8,10 @@
             <file>file:/C:/Users/EE475.PALAVEN.000/Documents/PIC18F25K22_Test.X/i2c.c</file>
         </group>
         <group name="Surgical">
-            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/PIC18F25K22_Test.X/main.c</file>
-            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/PIC18F25K22_Test.X/i2c.h</file>
-            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/PIC18F25K22_Test.X/main.h</file>
-            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/PIC18F25K22_Test.X/i2c.c</file>
+            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/ECE475/PIC18F25K22_Test.X/i2c.c</file>
+            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/ECE475/PIC18F25K22_Test.X/main.c</file>
+            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/ECE475/PIC18F25K22_Test.X/uart.c</file>
+            <file>file:/C:/Users/EE475.PALAVEN.000/Documents/ECE475/PIC18F25K22_Test.X/uart.h</file>
         </group>
     </open-files>
 </project-private>

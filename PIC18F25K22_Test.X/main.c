@@ -35,6 +35,10 @@ void main(void) {
     
     while(1)
     {
+		UART_Write(data[0]);
+
+
+		/*
         I2C_Write_Register(SLAVE_ADDR, CONTROL, ON);
         __delay_ms(100);
         I2C_Write_Register(SLAVE_ADDR, MOTOR_SPEED, 0x20);
@@ -44,6 +48,7 @@ void main(void) {
         CURRENT_SLAVE_STATUE = I2C_Read_Register(SLAVE_ADDR, SLAVE_STATUS);
         __delay_ms(100);
         CURRENT_VOLTAGE_SENSE = I2C_Read_Register(SLAVE_ADDR, VOLTAGE_SENSE);
+		*/
     }
     
     

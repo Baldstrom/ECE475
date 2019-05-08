@@ -59,6 +59,8 @@
 # 1 "./uart.h" 1
 # 18 "./uart.h"
     void UART_Initialize();
+    void UART_Write(unsigned char data);
+    unsigned char UART_Read();
 # 9 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
@@ -9186,15 +9188,8 @@ void main(void) {
 
     while(1)
     {
-        I2C_Write_Register(0x78, CONTROL, ON);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        I2C_Write_Register(0x78, MOTOR_SPEED, 0x20);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        I2C_Write_Register(0x78, SETPOINT, 0x7F);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        CURRENT_SLAVE_STATUE = I2C_Read_Register(0x78, SLAVE_STATUS);
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-        CURRENT_VOLTAGE_SENSE = I2C_Read_Register(0x78, VOLTAGE_SENSE);
+  UART_Write(data[0]);
+# 52 "main.c"
     }
 
 

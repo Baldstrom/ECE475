@@ -6,21 +6,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 ./uart.h
 [; ;./uart.h: 18:     void UART_Initialize();
 [v _UART_Initialize `(v ~T0 @X0 0 e? ]
-"30 ./i2c.h
-[; ;./i2c.h: 30:     void I2C_Write_Register(unsigned char addr, unsigned char reg, unsigned char data);
-[v _I2C_Write_Register `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"38 main.c
-[c E5 0 1 2 3 4 .. ]
-[n E5 registers MOTOR_SPEED CONTROL SETPOINT SLAVE_STATUS VOLTAGE_SENSE  ]
-[c E2 0 1 .. ]
-[n E2 control_options OFF ON  ]
-[v F5736 `(v ~T0 @X0 1 tf1`ul ]
-"183 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
-[v __delay `JF5736 ~T0 @X0 0 e ]
-[p i __delay ]
-"31 ./i2c.h
-[; ;./i2c.h: 31:     unsigned char I2C_Read_Register(unsigned char addr, unsigned char reg);
-[v _I2C_Read_Register `(uc ~T0 @X0 0 ef2`uc`uc ]
+"19
+[; ;./uart.h: 19:     void UART_Write(unsigned char data);
+[v _UART_Write `(v ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f25k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f25k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -763,32 +751,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 17:     while(1)
 [p x WDTPS = 32768 ]
 "19
-[; ;main.c: 19:         I2C_Write_Register(0x78, CONTROL, ON);
+[; ;main.c: 19:   UART_Write(data[0]);
 [v _CURRENT_SLAVE_STATUE `uc ~T0 @X0 1 s ]
 [i _CURRENT_SLAVE_STATUE
 -> -> 0 `i `uc
 ]
 "20
-[; ;main.c: 20:         _delay((unsigned long)((100)*(16000000/4000.0)));
 [v _CURRENT_VOLTAGE_SENSE `uc ~T0 @X0 1 s ]
 [i _CURRENT_VOLTAGE_SENSE
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "28
-[; ;main.c: 28:     }
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "30
-[; ;main.c: 30: 
 [e ( _I2C_Initialize (1 -> -> 400000 `l `ul ]
 "32
-[; ;main.c: 32: 
 [e ( _UART_Initialize ..  ]
-[v F5749 `uc ~T0 @X0 -> 4 `i s ]
-[i F5749
+[v F5752 `uc ~T0 @X0 -> 4 `i s ]
+[i F5752
 :U ..
 "34
 -> -> 86 `i `uc
@@ -798,38 +782,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _data `uc ~T0 @X0 -> 4 `i a ]
-[e = _data F5749 ]
+[e = _data F5752 ]
 "36
 [e :U 828 ]
 "37
 {
 "38
-[e ( _I2C_Write_Register (3 , , -> -> 120 `i `uc -> . `E5 1 `uc -> . `E2 1 `uc ]
-"39
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"40
-[e ( _I2C_Write_Register (3 , , -> -> 120 `i `uc -> . `E5 0 `uc -> -> 32 `i `uc ]
-"41
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"42
-[e ( _I2C_Write_Register (3 , , -> -> 120 `i `uc -> . `E5 2 `uc -> -> 127 `i `uc ]
-"43
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"44
-[e = _CURRENT_SLAVE_STATUE ( _I2C_Read_Register (2 , -> -> 120 `i `uc -> . `E5 3 `uc ]
-"45
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"46
-[e = _CURRENT_VOLTAGE_SENSE ( _I2C_Read_Register (2 , -> -> 120 `i `uc -> . `E5 4 `uc ]
-"47
+[e ( _UART_Write (1 *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
+"52
+[; ;main.c: 52:     }
 }
 [e :U 827 ]
 [e $U 828  ]
 [e :U 829 ]
-"50
+"55
+[; ;main.c: 55: }
 [e :UE 826 ]
 }
-"52
+"57
+[; ;main.c: 57: void delay(int val) { for (int i = 0; i < val; i++); }
 [v _delay `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _delay ]
